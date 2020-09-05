@@ -6,6 +6,7 @@ import { ModalDirective } from '../../node_modules/ngx-bootstrap';
 
 
 
+
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
@@ -13,9 +14,11 @@ import { ModalDirective } from '../../node_modules/ngx-bootstrap';
 })
 export class AppComponent implements OnInit {
 	isQuestionCardShow: boolean = false;
+	isSubmitted: boolean = false;
 	totalAnswered: number = 0;
 	rightAnswer: number=0;
 	score:number=0;
+
 	@ViewChild('submitModal') submitModal: ModalDirective;
 	@ViewChild('answerModal') answerModal : ModalDirective;
 	@ViewChild('questionForm') questionForm: any;
@@ -24,7 +27,7 @@ export class AppComponent implements OnInit {
 	constructor( ) { }
 
 	answerArray = [];
-
+	someDate: Date;
 	allQuestions: any = [{
 		"id": 1,
 		"question": "Which Of The Following Is More Detailed Document",
@@ -107,6 +110,7 @@ export class AppComponent implements OnInit {
 
 	/**Method call on submit the test */
 	submitTest() {
+		this.isSubmitted=true;
 		this.rightAnswer = 0;
 		this.totalAnswered = 0;
 		for (let i = 0; i < this.allQuestions.length; i++) {
@@ -133,6 +137,7 @@ export class AppComponent implements OnInit {
 			}
 
 		}
+		
 		this.score=0;
 		this.questionTest.reset();
 		this.isQuestionCardShow = true;
@@ -157,13 +162,12 @@ export class AppComponent implements OnInit {
 		this.submitModal.hide();
 		this.answerModal.show();
 	}
-
 	
 
- 
 
+	
 	ngOnInit() {
-
+		
 
 
 	}
