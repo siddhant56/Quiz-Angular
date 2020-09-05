@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CountdownTimerComponent
   ],
   imports: [
     ModalModule.forRoot(),
@@ -20,7 +22,9 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot(),
     AccordionModule.forRoot(),
     BrowserModule,
-    FormsModule
+    FormsModule,
+   
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
