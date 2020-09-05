@@ -11,6 +11,7 @@
           <h4 class="text-primary texth">This Quiz Includes 10 Questions</h4>
           <h4 class="text-success texth">Every Right Answer You Get +4</h4>
           <h4 class="text-danger texth">Every Wrong Answer Your Score Reduces by 1</h4> 
+          <h4 class="text-warning texth">You Will Have 6 minutes to complete quiz</h4> 
           <h4 class="text-primary texth">All The Best !!!</h4> 
         </div>
       </div>
@@ -28,11 +29,13 @@
     </div>
   </div>
   <div class="card mt-5" [hidden]="!isQuestionCardShow">
-  
+   <app-countdown-timer init="360" *ngIf="isQuestionCardShow && !isSubmitted"></app-countdown-timer>
     <div class="card-body">
     <div>
   </div>
+
       <form #questionTest="ngForm" novalidate>
+      
         <div *ngFor="let ques of allQuestions">
           <h6 class="text-btn-dark">{{ques.id}}) {{ques.question}}</h6>
           
@@ -116,3 +119,5 @@
   </div>
   
 </div>
+
+ 
