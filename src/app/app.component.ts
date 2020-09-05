@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { ModalDirective } from '../../node_modules/ngx-bootstrap';
-import { QuestionClass } from './question-class';
-import { ToastrService } from 'ngx-toastr';
+
 
 
 
@@ -17,13 +16,12 @@ export class AppComponent implements OnInit {
 	totalAnswered: number = 0;
 	rightAnswer: number=0;
 	score:number=0;
-	questionObj = new QuestionClass();
 	@ViewChild('submitModal') submitModal: ModalDirective;
 	@ViewChild('answerModal') answerModal : ModalDirective;
 	@ViewChild('questionForm') questionForm: any;
 	@ViewChild('questionTest') questionTest : any;
 
-	constructor( private toastr: ToastrService) { }
+	constructor( ) { }
 
 	answerArray = [];
 
