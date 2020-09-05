@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
 	isQuestionCardShow: boolean = false;
 	totalAnswered: number = 0;
 	rightAnswer: number=0;
+	score:number=0;
 	questionObj = new QuestionClass();
 	@ViewChild('submitModal') submitModal: ModalDirective;
 	@ViewChild('answerModal') answerModal : ModalDirective;
@@ -49,7 +50,7 @@ export class AppComponent implements OnInit {
 		"b": "Using Infographics",
 		"c": "Using Bold To Highlight Data",
 		"d": "Using Paragraphs to describe Work Experience",
-		"answer": "a"
+		"answer": "b"
 	},
 	{
 		"id": 4,
@@ -115,6 +116,10 @@ export class AppComponent implements OnInit {
 				this.totalAnswered++;
 				if (this.allQuestions[i]["selected"] == this.allQuestions[i]["answer"]) {
 					this.rightAnswer++;
+					this.score=this.score+4;
+				}
+				else{
+					this.score=this.score-1;
 				}
 			}
 
@@ -130,6 +135,7 @@ export class AppComponent implements OnInit {
 			}
 
 		}
+		this.score=0;
 		this.questionTest.reset();
 		this.isQuestionCardShow = true;
 
