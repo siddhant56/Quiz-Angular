@@ -2,8 +2,20 @@
   <h2 style="text-align:center" class="text-white">
     Welcome to Careernaksha Quiz  
   </h2>
-  <div  [hidden]="isQuestionCardShow">
-   
+  
+  <div class="main"  [hidden]="isQuestionCardShow">
+   <div class="row display-4 justify-content-center mt-3 mb-3 ">
+     <div class="col-sm-8 ">
+      <div class="card">
+        <div class="card-body justify-content-center align-items-center">
+          <h4 class="text-primary texth">This Quiz Includes 10 Questions</h4>
+          <h4 class="text-success texth">Every Right Answer You Get +4</h4>
+          <h4 class="text-danger texth">Every Wrong Answer Your Score Reduces by 1</h4> 
+          <h4 class="text-primary texth">All The Best !!!</h4> 
+        </div>
+      </div>
+     </div>
+   </div>
     
       <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
       <div class="row display-4 justify-content-center align-items-center">
@@ -64,11 +76,14 @@
     <div class="modal-content">
       <div class="modal-body text-center" style="color: #196f77;">
         <h4>Total Questions: {{allQuestions.length}} </h4>
-        <h4>
+        <h4 class="text-primary">
           Total Answered: {{totalAnswered}}
         </h4>
-        <h4>
+        <h4 >
           Right Answer : {{rightAnswer}}
+        </h4>
+        <h4 class="text-success">
+        Your Score : {{score}}/40
         </h4>
         <span>
           <button type="button" class="btn btn-primary" (click)="checkAnswers()" style="margin-right: 17px;"> Answers</button>
